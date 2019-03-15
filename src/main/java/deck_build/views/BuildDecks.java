@@ -2,10 +2,13 @@ package deck_build.views;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 
+import deck_build.models.Card;
+import deck_build.models.Deck;
 import net.miginfocom.swing.MigLayout;
 
 public class BuildDecks {
@@ -19,6 +22,7 @@ public class BuildDecks {
 	private JScrollPane sp_Cards, sp_Decks;
 	private JButton btn_LoadCards, btn_RandomDeck, btn_SaveDeck, btn_Left, btn_Right, btn_checkDeckName;
 	private JTextField tf_checkDeckName;
+	private JList<Card> cards;
 	
 	private BuildDecks() {
 		this.panel = new JPanel(new MigLayout());
@@ -33,17 +37,25 @@ public class BuildDecks {
 		
 		this.tf_checkDeckName = new JTextField(30);
 		
-		this.panel.add(this.btn_LoadCards, "align center");
-		this.panel.add(this.btn_RandomDeck, "align center");
-		this.panel.add(this.tf_checkDeckName, "align left, wrap, pushx, growx");
-		this.panel.add(this.btn_checkDeckName, "skip 2, wrap, pushx, growx");
+		this.sp_Cards = new JScrollPane();
+		this.sp_Cards.setViewportView(new JList<String>());
+		this.sp_Decks = new JScrollPane();
+		this.sp_Decks.setViewportView(new JList<String>());
+		
+		this.panel.add(this.btn_LoadCards);
+		this.panel.add(this.btn_RandomDeck, "wrap");
+		this.panel.add(this.sp_Cards, "pushy, growy");
+		this.panel.add(this.sp_Decks, "pushy, growy, wrap");
+		this.panel.add(this.tf_checkDeckName, "split 2, align left");
+		this.panel.add(this.btn_checkDeckName);
+		this.panel.add(this.btn_SaveDeck, "align right");
 		
 		this.frame.setContentPane(this.panel);
 		this.frame.setTitle("Constructor de Barajas 100% REAL NO FAKE 1 LINK MEGA");
 		this.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.frame.setResizable(false);
 		this.frame.setLocationRelativeTo(null);
 		this.frame.setSize(600, 480);
-		this.frame.pack();
 		this.frame.setVisible(true);
 	}
 
