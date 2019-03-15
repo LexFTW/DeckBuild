@@ -1,4 +1,4 @@
-package deck_build.DeckBuild;
+package deck_build;
 
 /**
  * Hello world!
