@@ -1,5 +1,8 @@
 package deck_build.views;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JList;
@@ -11,7 +14,7 @@ import deck_build.models.Card;
 import deck_build.models.Deck;
 import net.miginfocom.swing.MigLayout;
 
-public class BuildDecks {
+public class BuildDecks implements ActionListener{
 
 	public static void main(String[] args) {
 		new BuildDecks();
@@ -57,6 +60,19 @@ public class BuildDecks {
 		this.frame.setLocationRelativeTo(null);
 		this.frame.setSize(600, 480);
 		this.frame.setVisible(true);
+	}
+
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource() instanceof JButton) {
+			JButton btn = (JButton) e.getSource();
+			if(btn == this.btn_checkDeckName) {
+				// ...
+			}else if(btn == this.btn_LoadCards) {
+				// ...
+			}else if(btn == this.btn_RandomDeck) {
+				// ...
+			}
+		}
 	}
 
 }

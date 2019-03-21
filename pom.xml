@@ -24,62 +24,61 @@
 			<artifactId>miglayout</artifactId>
 			<version>3.7.4</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.mongodb</groupId>
 			<artifactId>mongodb-driver</artifactId>
 			<version>3.4.3</version>
 		</dependency>
-		<dependency>
-			<groupId>org.exist-db</groupId>
-			<artifactId>exist-core</artifactId>
-			<version>${exist.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.exist-db</groupId>
-			<artifactId>exist-optional</artifactId>
-			<version>${exist.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.exist-db</groupId>
-			<artifactId>exist-start</artifactId>
-			<version>${exist.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.exist-db</groupId>
-			<artifactId>exist-index-lucene</artifactId>
-			<version>${exist.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.exist-db</groupId>
-			<artifactId>exist-index-ngram</artifactId>
-			<version>${exist.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.exist-db</groupId>
-			<artifactId>exist-index-range</artifactId>
-			<version>${exist.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.exist-db</groupId>
-			<artifactId>exist-index-sort</artifactId>
-			<version>${exist.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.exist-db</groupId>
-			<artifactId>exist-fluent</artifactId>
-			<version>${exist.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.exist-db</groupId>
-			<artifactId>exist-restxq</artifactId>
-			<version>${exist.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.exist-db</groupId>
-			<artifactId>exist-expath</artifactId>
-			<version>${exist.version}</version>
-		</dependency>
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.exist-db</groupId> -->
+<!-- 			<artifactId>exist-core</artifactId> -->
+<!-- 			<version>${exist.version}</version> -->
+<!-- 		</dependency> -->
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.exist-db</groupId> -->
+<!-- 			<artifactId>exist-optional</artifactId> -->
+<!-- 			<version>${exist.version}</version> -->
+<!-- 		</dependency> -->
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.exist-db</groupId> -->
+<!-- 			<artifactId>exist-start</artifactId> -->
+<!-- 			<version>${exist.version}</version> -->
+<!-- 		</dependency> -->
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.exist-db</groupId> -->
+<!-- 			<artifactId>exist-index-lucene</artifactId> -->
+<!-- 			<version>${exist.version}</version> -->
+<!-- 		</dependency> -->
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.exist-db</groupId> -->
+<!-- 			<artifactId>exist-index-ngram</artifactId> -->
+<!-- 			<version>${exist.version}</version> -->
+<!-- 		</dependency> -->
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.exist-db</groupId> -->
+<!-- 			<artifactId>exist-index-range</artifactId> -->
+<!-- 			<version>${exist.version}</version> -->
+<!-- 		</dependency> -->
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.exist-db</groupId> -->
+<!-- 			<artifactId>exist-index-sort</artifactId> -->
+<!-- 			<version>${exist.version}</version> -->
+<!-- 		</dependency> -->
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.exist-db</groupId> -->
+<!-- 			<artifactId>exist-fluent</artifactId> -->
+<!-- 			<version>${exist.version}</version> -->
+<!-- 		</dependency> -->
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.exist-db</groupId> -->
+<!-- 			<artifactId>exist-restxq</artifactId> -->
+<!-- 			<version>${exist.version}</version> -->
+<!-- 		</dependency> -->
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.exist-db</groupId> -->
+<!-- 			<artifactId>exist-expath</artifactId> -->
+<!-- 			<version>${exist.version}</version> -->
+<!-- 		</dependency> -->
 	</dependencies>
 
 	<repositories>
