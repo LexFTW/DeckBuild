@@ -5,12 +5,14 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
+import javax.swing.ListSelectionModel;
 
 import deck_build.implementations.exists.IExistsCard;
 import deck_build.models.Card;
@@ -60,7 +62,7 @@ public class BuildDecks implements ActionListener{
 		this.panel.add(this.btn_SaveDeck, "align right");
 		
 		this.frame.setContentPane(this.panel);
-		this.frame.setTitle("Constructor de Barajas 100% REAL NO FAKE 1 LINK MEGA");
+		this.frame.setTitle("Pokemon TCG - Build Deck");
 		this.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.frame.setResizable(false);
 		this.frame.setLocationRelativeTo(null);
@@ -80,6 +82,15 @@ public class BuildDecks implements ActionListener{
 			}else if(btn == this.btn_LoadCards) {
 				IExistsCard exists = new IExistsCard();
 				ArrayList<Card> cards = exists.getCards();
+				DefaultListModel<String> listModel = new DefaultListModel<String>();
+				for (Card card : cards) {
+					listModel.addElement(card.toString());
+				}
+				JList list = new JList(listModel);
+				list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+				list.setSelectedIndex(0);
+				System.out.println(list.getModel());
+				this.sp_Cards.add(list);
 			}else if(btn == this.btn_RandomDeck) {
 				// ...
 			}
