@@ -69,8 +69,7 @@ public class Card {
 
 	@Override
 	public String toString() {
-		return "Card [cardId=" + cardId + ", summonCost=" + summonCost + ", attack=" + attack + ", defense=" + defense
-				+ ", value=" + value + ", name=" + name + "]";
+		return this.name + " | At: " + this.attack + " | Df: " + this.defense + " | Summon Cost: " + this.summonCost;
 	}
 	
 }

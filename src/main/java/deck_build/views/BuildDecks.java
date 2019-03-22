@@ -15,9 +15,11 @@ import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
 
 import deck_build.implementations.exists.IExistsCard;
+import deck_build.implementations.mongo.IMongoDeck;
 import deck_build.models.Card;
 import deck_build.models.Deck;
 import net.miginfocom.swing.MigLayout;
+import net.sf.saxon.functions.Exists;
 
 public class BuildDecks implements ActionListener{
 
@@ -30,7 +32,10 @@ public class BuildDecks implements ActionListener{
 	private JScrollPane sp_Cards, sp_Decks;
 	private JButton btn_LoadCards, btn_RandomDeck, btn_SaveDeck, btn_Left, btn_Right, btn_checkDeckName;
 	private JTextField tf_checkDeckName;
-	private JList<Card> cards;
+	private DefaultListModel<Card> dlmcards, dlmdeck;
+	private JList<Card> cards, deck;
+	private IExistsCard exists;
+	private ArrayList<Card> cardsExist;
 	
 	private BuildDecks() {
 		this.panel = new JPanel(new MigLayout());
@@ -45,13 +50,23 @@ public class BuildDecks implements ActionListener{
 		
 		this.tf_checkDeckName = new JTextField(30);
 		
-		this.sp_Cards = new JScrollPane();
-		this.sp_Cards.setViewportView(new JList<String>());
-		this.sp_Decks = new JScrollPane();
-		this.sp_Decks.setViewportView(new JList<String>());
+		this.dlmcards = new DefaultListModel<Card>();
+		this.dlmdeck = new DefaultListModel<Card>();
+		
+		this.cards = new JList(this.dlmcards);
+		this.cards.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		this.cards.setSelectedIndex(0);
+		
+		this.deck = new JList(this.dlmdeck);
+		this.deck.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		this.deck.setSelectedIndex(0);
+		
+		this.sp_Cards = new JScrollPane(this.cards);
+		this.sp_Decks = new JScrollPane(this.deck);
 		
 		this.btn_checkDeckName.addActionListener(this);
 		this.btn_LoadCards.addActionListener(this);
+		this.btn_RandomDeck.addActionListener(this);
 		
 		this.panel.add(this.btn_LoadCards);
 		this.panel.add(this.btn_RandomDeck, "wrap");
@@ -80,19 +95,17 @@ public class BuildDecks implements ActionListener{
 					System.err.println("[ERROR] - Introduce un nombre a la baraja.");
 				}
 			}else if(btn == this.btn_LoadCards) {
-				IExistsCard exists = new IExistsCard();
-				ArrayList<Card> cards = exists.getCards();
-				DefaultListModel<String> listModel = new DefaultListModel<String>();
-				for (Card card : cards) {
-					listModel.addElement(card.toString());
+				this.exists = new IExistsCard();
+				this.cardsExist = exists.getCards();
+				for (Card card : cardsExist) {
+					this.dlmcards.addElement(card);
 				}
-				JList list = new JList(listModel);
-				list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-				list.setSelectedIndex(0);
-				System.out.println(list.getModel());
-				this.sp_Cards.add(list);
 			}else if(btn == this.btn_RandomDeck) {
-				// ...
+				IMongoDeck mongo = new IMongoDeck();
+				Deck d = mongo.randomDeck(this.cardsExist);
+				for (Card card : d.getCards()) {
+					this.dlmdeck.addElement(card);
+				}
 			}
 		}
 	}
