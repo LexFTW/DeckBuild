@@ -1,0 +1,177 @@
+<cards>
+  <card id="1">
+    <name>Charmander</name>
+    <summonCost>2</summonCost>
+    <attack>20</attack>
+    <defense>70</defense>
+    <value>2</value>
+  </card>
+  <card id="2">
+    <name>Charmeleon</name>
+    <summonCost>3</summonCost>
+    <attack>80</attack>
+    <defense>80</defense>
+    <value>3</value>
+  </card>
+  <card id="3">
+    <name>Charizard [Básico]</name>
+    <summonCost>4</summonCost>
+    <attack>120</attack>
+    <defense>180</defense>
+    <value>4</value>
+  </card>
+  <card id="4">
+    <name>Charizard [EX]</name>
+    <summonCost>5</summonCost>
+    <attack>150</attack>
+    <defense>180</defense>
+    <value>5</value>
+  </card>
+  <card id="5">
+    <name>Charizard [GX]</name>
+    <summonCost>6</summonCost>
+    <attack>300</attack>
+    <defense>250</defense>
+    <value>6</value>
+  </card>
+  <card id="6">
+    <name>Bulbasaur</name>
+    <summonCost>2</summonCost>
+    <attack>30</attack>
+    <defense>70</defense>
+    <value>2</value>
+  </card>
+  <card id="7">
+    <name>Ivysaur</name>
+    <summonCost>3</summonCost>
+    <attack>60</attack>
+    <defense>80</defense>
+    <value>3</value>
+  </card>
+  <card id="8">
+    <name>Venusaur [Básico]</name>
+    <summonCost>4</summonCost>
+    <attack>90</attack>
+    <defense>160</defense>
+    <value>4</value>
+  </card>
+  <card id="9">
+    <name>Venusaur [EX]</name>
+    <summonCost>5</summonCost>
+    <attack>110</attack>
+    <defense>170</defense>
+    <value>5</value>
+  </card>
+  <card id="10">
+    <name>Venusaur [GX]</name>
+    <summonCost>6</summonCost>
+    <attack>180</attack>
+    <defense>270</defense>
+    <value>6</value>
+  </card>
+  <card id="11">
+    <name>Squirtle</name>
+    <summonCost>2</summonCost>
+    <attack>30</attack>
+    <defense>50</defense>
+    <value>2</value>
+  </card>
+  <card id="12">
+    <name>Wartotle</name>
+    <summonCost>3</summonCost>
+    <attack>70</attack>
+    <defense>90</defense>
+    <value>3</value>
+  </card>
+  <card id="13">
+    <name>Blastoise [Básico]</name>
+    <summonCost>4</summonCost>
+    <attack>150</attack>
+    <defense>160</defense>
+    <value>4</value>
+  </card>
+  <card id="14">
+    <name>Blastoise [EX]</name>
+    <summonCost>5</summonCost>
+    <attack>120</attack>
+    <defense>180</defense>
+    <value>5</value>
+  </card>
+  <card id="15">
+    <name>Pikachu</name>
+    <summonCost>3</summonCost>
+    <attack>60</attack>
+    <defense>80</defense>
+    <value>3</value>
+  </card>
+  <card id="16">
+    <name>Pikachu [EX]</name>
+    <summonCost>4</summonCost>
+    <attack>100</attack>
+    <defense>130</defense>
+    <value>4</value>
+  </card>
+  <card id="17">
+    <name>Pikachu [GX]</name>
+    <summonCost>5</summonCost>
+    <attack>200</attack>
+    <defense>240</defense>
+    <value>5</value>
+  </card>
+  <card id="18">
+    <name>Mewtwo</name>
+    <summonCost>3</summonCost>
+    <attack>100</attack>
+    <defense>120</defense>
+    <value>3</value>
+  </card>
+  <card id="19">
+    <name>Mewtwo [EX]</name>
+    <summonCost>4</summonCost>
+    <attack>120</attack>
+    <defense>170</defense>
+    <value>4</value>
+  </card>
+  <card id="20">
+    <name>Mewtwo [GX]</name>
+    <summonCost>5</summonCost>
+    <attack>200</attack>
+    <defense>190</defense>
+    <value>5</value>
+  </card>
+  <card id="21">
+    <name>Revivir</name>
+    <summonCost>2</summonCost>
+    <attack>0</attack>
+    <defense>0</defense>
+    <value>2</value>
+  </card>
+  <card id="22">
+    <name>Revivir Máximo</name>
+    <summonCost>3</summonCost>
+    <attack>0</attack>
+    <defense>0</defense>
+    <value>3</value>
+  </card>
+  <card id="23">
+    <name>Poción</name>
+    <summonCost>1</summonCost>
+    <attack>0</attack>
+    <defense>0</defense>
+    <value>1</value>
+  </card>
+  <card id="24">
+    <name>Superpoción</name>
+    <summonCost>2</summonCost>
+    <attack>0</attack>
+    <defense>0</defense>
+    <value>2</value>
+  </card>
+  <card id="25">
+    <name>Poción Máxima</name>
+    <summonCost>3</summonCost>
+    <attack>0</attack>
+    <defense>0</defense>
+    <value>3</value>
+  </card>
+</cards>

@@ -2,6 +2,8 @@ package deck_build.views;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -10,6 +12,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 
+import deck_build.implementations.exists.IExistsCard;
 import deck_build.models.Card;
 import deck_build.models.Deck;
 import net.miginfocom.swing.MigLayout;
@@ -45,6 +48,9 @@ public class BuildDecks implements ActionListener{
 		this.sp_Decks = new JScrollPane();
 		this.sp_Decks.setViewportView(new JList<String>());
 		
+		this.btn_checkDeckName.addActionListener(this);
+		this.btn_LoadCards.addActionListener(this);
+		
 		this.panel.add(this.btn_LoadCards);
 		this.panel.add(this.btn_RandomDeck, "wrap");
 		this.panel.add(this.sp_Cards, "pushy, growy");
@@ -66,9 +72,14 @@ public class BuildDecks implements ActionListener{
 		if(e.getSource() instanceof JButton) {
 			JButton btn = (JButton) e.getSource();
 			if(btn == this.btn_checkDeckName) {
-				// ...
+				if(!this.tf_checkDeckName.getText().equals("")) {
+					
+				}else {
+					System.err.println("[ERROR] - Introduce un nombre a la baraja.");
+				}
 			}else if(btn == this.btn_LoadCards) {
-				// ...
+				IExistsCard exists = new IExistsCard();
+				ArrayList<Card> cards = exists.getCards();
 			}else if(btn == this.btn_RandomDeck) {
 				// ...
 			}
