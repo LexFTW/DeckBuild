@@ -1,13 +1,13 @@
-package deck_build.models;
+package deckbuild.models;
 
 public class Card {
 
-	private int cardId, summonCost, attack, defense, value;
+	private int id, summonCost, attack, defense, value;
 	private String name;
 	
-	public Card(int cardId, int summonCost, int attack, int defense, int value, String name) {
+	public Card(int id, int summonCost, int attack, int defense, int value, String name) {
 		super();
-		this.cardId = cardId;
+		this.id = id;
 		this.summonCost = summonCost;
 		this.attack = attack;
 		this.defense = defense;
@@ -19,8 +19,8 @@ public class Card {
 		super();
 	}
 
-	public int getCardId() {
-		return cardId;
+	public int getId() {
+		return id;
 	}
 
 	public int getSummonCost() {
@@ -43,8 +43,8 @@ public class Card {
 		return name;
 	}
 
-	public void setCardId(int cardId) {
-		this.cardId = cardId;
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public void setSummonCost(int summonCost) {
@@ -69,7 +69,7 @@ public class Card {
 
 	@Override
 	public String toString() {
-		return this.name + " | At: " + this.attack + " | Df: " + this.defense + " | Summon Cost: " + this.summonCost;
+		return "Card [id=" + id + ", summonCost=" + summonCost + ", attack=" + attack + ", defense=" + defense
+				+ ", value=" + value + ", name=" + name + "]";
 	}
-	
 }

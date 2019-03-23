@@ -1,40 +1,36 @@
-package deck_build.models;
+package deckbuild.models;
 
 import java.util.ArrayList;
 
 public class Deck {
 
-	private int deckValue;
 	private String deckName;
+	private int deckValue;
 	private ArrayList<Card> cards;
 	
 	public Deck(int deckValue, String deckName, ArrayList<Card> cards) {
 		super();
-		this.deckValue = deckValue;
 		this.deckName = deckName;
 		this.cards = cards;
+		this.deckValue = deckValue;
 	}
 
 	public Deck() {
-		super();
-	}
-
-	public int getDeckValue() {
-		return deckValue;
+		this.cards = new ArrayList<Card>();
 	}
 
 	public String getDeckName() {
 		return deckName;
 	}
 
+	public int getDeckValue() {
+		return deckValue;
+	}
+	
 	public ArrayList<Card> getCards() {
 		return cards;
 	}
-
-	public void setDeckValue(int deckValue) {
-		this.deckValue = deckValue;
-	}
-
+	
 	public void setDeckName(String deckName) {
 		this.deckName = deckName;
 	}
@@ -43,8 +39,12 @@ public class Deck {
 		this.cards = cards;
 	}
 
+	public void setDeckValue(int deckValue) {
+		this.deckValue = deckValue;
+	}
+
 	@Override
 	public String toString() {
-		return "Deck [deckValue=" + deckValue + ", deckName=" + deckName + ", cards=" + cards + "]";
+		return "Deck [deckName=" + deckName + ", deckValue=" + deckValue + ", cards=" + cards + "]";
 	}
 }
