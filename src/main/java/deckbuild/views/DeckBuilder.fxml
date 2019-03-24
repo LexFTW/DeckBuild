@@ -32,7 +32,7 @@
          <center>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="TOP_CENTER">
                <children>
-                  <Button mnemonicParsing="false" style="-fx-background-color: #4e83d3; -fx-background-border: 0;" text="&gt;" textFill="WHITE">
+                  <Button mnemonicParsing="false" onAction="#addToDeck" style="-fx-background-color: #4e83d3; -fx-background-border: 0;" text="&gt;" textFill="WHITE">
                      <VBox.margin>
                         <Insets bottom="5.0" />
                      </VBox.margin>
@@ -43,7 +43,7 @@
                         <Font name="Prototype" size="20.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" style="-fx-background-color: #4e83d3; -fx-background-border: 0;" text="&lt;" textFill="WHITE">
+                  <Button mnemonicParsing="false" onAction="#removeToDeck" style="-fx-background-color: #4e83d3; -fx-background-border: 0;" text="&lt;" textFill="WHITE">
                      <padding>
                         <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
                      </padding>

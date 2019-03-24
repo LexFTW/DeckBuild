@@ -22,7 +22,10 @@ public class DeckImplMongo implements IDeck{
 	}
 	
 	public boolean removeCardToDeck(Card card) {
-		return false;
+		this.deck.getCards().remove(card);
+		this.deck.setDeckValue(this.deck.getDeckValue() - card.getValue());
+		this.value += card.getValue();
+		return true;
 	}
 
 	public Deck generateRandomDeck(ArrayList<Card> cards) {
@@ -33,6 +36,7 @@ public class DeckImplMongo implements IDeck{
 		while(deck_value > 0) {
 			Card c = cards.get(random.nextInt(cards.size()));
 			if((deck_value - c.getValue()) >= 0) {
+				cards.remove(c);
 				cardToDeck.add(c);
 				deck_value -= c.getValue();
 			}
