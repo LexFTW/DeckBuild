@@ -31,14 +31,13 @@ public class DeckImplMongo implements IDeck{
 	public Deck generateRandomDeck(ArrayList<Card> cards) {
 		ArrayList<Card> cardToDeck = new ArrayList<Card>();
 		Random random = new Random();
-		int deck_value = this.value;
 		
-		while(deck_value > 0) {
+		while(this.value > 0) {
 			Card c = cards.get(random.nextInt(cards.size()));
-			if((deck_value - c.getValue()) >= 0) {
+			if((this.value - c.getValue()) >= 0) {
 				cards.remove(c);
 				cardToDeck.add(c);
-				deck_value -= c.getValue();
+				this.value -= c.getValue();
 			}
 		}
 		
