@@ -11,11 +11,15 @@ import deckbuild.models.Card;
 public class CardImplExistDB implements ICard{
 
 	public ArrayList<Card> getCards() {
-		JSONArray array = this.exist.getArrayFromExistDB("cards", "card");
-		for (Object object : array) {
-			Card c = new Gson().fromJson(object.toString(), Card.class);
-			cards.add(c);
+		if(this.cards == null) {
+			this.cards = new ArrayList<Card>();
+			JSONArray array = this.exist.getArrayFromExistDB("cards", "card");
+			for (Object object : array) {
+				Card c = new Gson().fromJson(object.toString(), Card.class);
+				cards.add(c);
+			}
 		}
+		
 		return cards;
 	}
 
@@ -24,5 +28,5 @@ public class CardImplExistDB implements ICard{
 	}
 
 	private CExistDB exist;
-	private ArrayList<Card> cards = new ArrayList<Card>();
+	private ArrayList<Card> cards;
 }

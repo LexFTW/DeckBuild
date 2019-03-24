@@ -1,8 +1,12 @@
 package deckbuild.implementations.connection;
 
+import java.io.IOException;
+
 import org.bson.Document;
 
+import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import com.mongodb.MongoClient;
@@ -31,9 +35,11 @@ public class CMongo {
 	
 	public Deck getAlredyDeck(String name) {
 		Document doc = this.mongoCollection.find(Filters.eq("deckName", name)).first();
-		Gson gson = new Gson();
-		Deck d = gson.fromJson(doc.toJson(), Deck.class);
-		return d;
+		if(doc != null) {
+			Deck d = new Gson().fromJson(doc.toJson(), Deck.class);
+			return d;
+		}
+		return null;
 	}
 	
 	public void updateDeck(Deck d) {
@@ -42,6 +48,7 @@ public class CMongo {
 			String jsonUpdateMongo = map.writeValueAsString(d);
 			Document doc = Document.parse(jsonUpdateMongo);
 			this.mongoCollection.findOneAndReplace(Filters.eq("deckName", d.getDeckName()), doc);
+			System.out.println(d);
 		} catch (JsonProcessingException e) {
 			e.printStackTrace();
 		}

@@ -17,7 +17,7 @@
    <center>
       <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <top>
-            <TextField promptText="Título de la Baraja" style="-fx-background-color: transparent;" BorderPane.alignment="CENTER">
+            <TextField fx:id="title" promptText="Título de la Baraja" style="-fx-background-color: transparent;" BorderPane.alignment="CENTER">
                <BorderPane.margin>
                   <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
                </BorderPane.margin>
@@ -59,8 +59,8 @@
                <left>
                   <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                      <children>
-                        <TextField style="-fx-background-radius: 0;" />
-                        <Button mnemonicParsing="false" style="-fx-background-radius: 0;" text="Buscar" />
+                        <TextField fx:id="titleSearch" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="190.0" style="-fx-background-radius: 0;" />
+                        <Button fx:id="btnSearch" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#searchDeck" prefWidth="60.0" style="-fx-background-radius: 0;" text="Buscar" />
                      </children>
                      <BorderPane.margin>
                         <Insets top="5.0" />
@@ -74,12 +74,15 @@
                   <Insets top="5.0" />
                </padding>
                <right>
-                  <Button mnemonicParsing="false" style="-fx-background-radius: 0;" text="Guardar" BorderPane.alignment="CENTER" />
+                  <Button fx:id="btnSave" mnemonicParsing="false" onAction="#saveDeck" style="-fx-background-radius: 0;" text="Guardar" BorderPane.alignment="CENTER">
+                     <BorderPane.margin>
+                        <Insets bottom="2.0" />
+                     </BorderPane.margin></Button>
                </right>
             </BorderPane>
          </bottom>
          <right>
-            <VBox prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="TOP_CENTER">
+            <VBox alignment="TOP_CENTER" prefWidth="250.0" BorderPane.alignment="TOP_CENTER">
                <children>
                   <Button fx:id="btnRandom" mnemonicParsing="false" onAction="#loadRandomDeck" text="Randomizar Baraja">
                      <VBox.margin>
@@ -88,7 +91,7 @@
                   </Button>
                   <ScrollPane prefHeight="325.0" prefWidth="100.0">
                      <content>
-                        <ListView fx:id="listViewDeck" prefHeight="320.0" prefWidth="198.0" />
+                        <ListView fx:id="listViewDeck" prefHeight="320.0" prefWidth="248.0" />
                      </content>
                   </ScrollPane>
                </children>
@@ -98,7 +101,7 @@
             </VBox>
          </right>
          <left>
-            <VBox prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="TOP_CENTER">
+            <VBox alignment="TOP_CENTER" prefWidth="250.0" BorderPane.alignment="CENTER">
                <children>
                   <Button fx:id="btnLoad" mnemonicParsing="false" onAction="#loadCards" text="Cargar Cartas">
                      <VBox.margin>
@@ -107,7 +110,7 @@
                   </Button>
                   <ScrollPane prefHeight="325.0" prefWidth="100.0">
                      <content>
-                        <ListView fx:id="listView" prefHeight="320.0" prefWidth="198.0" />
+                        <ListView fx:id="listView" prefHeight="320.0" prefWidth="248.0" />
                      </content>
                   </ScrollPane>
                </children>
