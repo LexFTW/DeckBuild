@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="deckbuild.views.DeckBuildController">
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+   <center>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <top>
+            <TextField promptText="Título de la Baraja" style="-fx-background-color: transparent;" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+               </BorderPane.margin>
+               <padding>
+                  <Insets bottom="10.0" top="10.0" />
+               </padding>
+               <font>
+                  <Font name="Prototype" size="15.0" />
+               </font>
+            </TextField>
+         </top>
+         <center>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="TOP_CENTER">
+               <children>
+                  <Button mnemonicParsing="false" style="-fx-background-color: #4e83d3; -fx-background-border: 0;" text="&gt;" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                     </padding>
+                     <font>
+                        <Font name="Prototype" size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" style="-fx-background-color: #4e83d3; -fx-background-border: 0;" text="&lt;" textFill="WHITE">
+                     <padding>
+                        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                     </padding>
+                     <font>
+                        <Font name="Prototype" size="20.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+         </center>
+         <bottom>
+            <BorderPane prefHeight="39.0" prefWidth="620.0" BorderPane.alignment="CENTER">
+               <left>
+                  <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <TextField style="-fx-background-radius: 0;" />
+                        <Button mnemonicParsing="false" style="-fx-background-radius: 0;" text="Buscar" />
+                     </children>
+                     <BorderPane.margin>
+                        <Insets top="5.0" />
+                     </BorderPane.margin>
+                  </HBox>
+               </left>
+               <BorderPane.margin>
+                  <Insets left="20.0" right="20.0" />
+               </BorderPane.margin>
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+               <right>
+                  <Button mnemonicParsing="false" style="-fx-background-radius: 0;" text="Guardar" BorderPane.alignment="CENTER" />
+               </right>
+            </BorderPane>
+         </bottom>
+         <right>
+            <VBox prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="TOP_CENTER">
+               <children>
+                  <Button fx:id="btnRandom" mnemonicParsing="false" onAction="#loadRandomDeck" text="Randomizar Baraja">
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </Button>
+                  <ScrollPane prefHeight="325.0" prefWidth="100.0">
+                     <content>
+                        <ListView fx:id="listViewDeck" prefHeight="320.0" prefWidth="198.0" />
+                     </content>
+                  </ScrollPane>
+               </children>
+               <BorderPane.margin>
+                  <Insets right="20.0" />
+               </BorderPane.margin>
+            </VBox>
+         </right>
+         <left>
+            <VBox prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="TOP_CENTER">
+               <children>
+                  <Button fx:id="btnLoad" mnemonicParsing="false" onAction="#loadCards" text="Cargar Cartas">
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </Button>
+                  <ScrollPane prefHeight="325.0" prefWidth="100.0">
+                     <content>
+                        <ListView fx:id="listView" prefHeight="320.0" prefWidth="198.0" />
+                     </content>
+                  </ScrollPane>
+               </children>
+               <BorderPane.margin>
+                  <Insets left="20.0" />
+               </BorderPane.margin>
+            </VBox>
+         </left>
+      </BorderPane>
+   </center>
+</BorderPane>

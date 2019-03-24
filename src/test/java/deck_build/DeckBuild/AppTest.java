@@ -1,7 +1,5 @@
 package deck_build.DeckBuild;
 
-import deck_build.implementations.exists.IExists;
-import deck_build.implementations.exists.IExistsCard;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
@@ -39,7 +37,5 @@ public class AppTest
     }
     
     public static void main(String[] args) {
-    	IExistsCard card = new IExistsCard();
-    	card.getCards();
     }
 }

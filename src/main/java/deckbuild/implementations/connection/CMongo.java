@@ -10,7 +10,6 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.Filters;
-
 import deckbuild.models.Deck;
 import net.sf.saxon.tree.iter.MappingJavaIterator.Mapper;
 
